@@ -1,0 +1,32 @@
+server:
+  port: 8080  # Port on which the Spring Boot application will run
+
+spring:
+  application:
+    name: langaroo
+  datasource:
+    url: jdbc:postgresql://postgres:5432/english_practice  # PostgreSQL connection URL
+    username: postgres  # PostgreSQL username
+    password: postgres  # PostgreSQL password
+    driver-class-name: org.postgresql.Driver  # PostgreSQL driver
+
+  jpa:
+#    hibernate:
+#      ddl-auto: update  # Automatically update the database schema
+    show-sql: true # Show SQL queries in the logs (useful for debugging)
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    properties:
+      hibernate:
+        format_sql: true  # Format SQL queries for better readability in logs
+#
+#  profiles:
+#    active: dev  # Active profile (you can change this to 'prod' for production)
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: INFO  # Log SQL queries at DEBUG level
+      springframework:
+        web: INFO
+        security: INFO
