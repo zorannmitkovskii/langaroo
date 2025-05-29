@@ -1,0 +1,4 @@
+-- CREATE USER lanadmin WITH PASSWORD 'password';
+-- CREATE DATABASE langaroo OWNER=lanadmin;
+-- GRANT ALL PRIVILEGES ON DATABASE langaroo TO lanadmin;
+-- \connect langaroo;

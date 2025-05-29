@@ -5,9 +5,9 @@ spring:
   application:
     name: langaroo
   datasource:
-    url: jdbc:postgresql://postgres:5432/english_practice  # PostgreSQL connection URL
-    username: postgres  # PostgreSQL username
-    password: postgres  # PostgreSQL password
+    url: jdbc:postgresql://localhost:5432/langaroo  # PostgreSQL connection URL
+    username: lanadmin  # PostgreSQL username
+    password: password  # PostgreSQL password
     driver-class-name: org.postgresql.Driver  # PostgreSQL driver
 
   jpa:

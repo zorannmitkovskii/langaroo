@@ -8,35 +8,11 @@ services:
     image: postgres:15
     container_name: postgres-langaroo
     environment:
-      POSTGRES_DB: english_practice
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: langaroo
+      POSTGRES_USER: lanadmin
+      POSTGRES_PASSWORD: password
     volumes:
       - postgres_local:/var/lib/postgresql/data
       - ./.infrastructure/postgres/init/:/docker-entrypoint-initdb.d/
     ports:
       - 5432:5432
-
-#  keycloak:
-#    container_name: keycloak1
-#    image: ${DEFAULT_KEYCLOAK_IMAGE}
-#    environment:
-#      KC_DB: 'postgres'
-#      KC_DB_URL: 'jdbc:postgresql://postgres/keycloak'
-#      KC_DB_USERNAME: 'keycloak'
-#      KC_DB_PASSWORD: 'password'
-#      KEYCLOAK_ADMIN: 'admin'
-#      KEYCLOAK_ADMIN_PASSWORD: 'admin'
-#    volumes:
-#      - ${KEYCLOAK_REALM_JSON}:/opt/keycloak/data/import/realm-export.json
-#      - ${KEYCLOAK_THEMES}:/opt/keycloak/themes/medical-portal
-#    ports:
-#      - 8181:8080
-#    depends_on:
-#      - postgres
-#    command:
-#      [
-#          'start-dev',
-#          '--import-realm',
-#          '--http-relative-path=/auth'
-#      ]
